@@ -1,11 +1,11 @@
-import React from 'react'
+import AppLayout from './layouts/AppLayout'
+import DiscoverPage from './features/anime/pages/DiscoverPage'
+import './App.css'
 
-const App = () => {
+export default function App() {
   return (
-    <div>
-      <h1>Hello, World!</h1>
-    </div>
+    <AppLayout>
+      <DiscoverPage />
+    </AppLayout>
   )
 }
-
-export default App
