@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const { randomUUID, createHash } = require("node:crypto");
-const { redisClient } = require("../../db/redis");
+const { redisClient } = require("../../../db/redis");
 const sessions = require("./sessionService");
 
 const ACCESS_TOKEN_SECONDS = 900;

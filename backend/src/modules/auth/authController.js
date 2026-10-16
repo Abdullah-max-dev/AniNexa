@@ -1,6 +1,6 @@
-const authService = require("../services/authService");
-const tokenService = require("../services/tokenService");
-const User = require("../models/user.model");
+const authService = require("./authService");
+const tokenService = require("./tokenService");
+const User = require("./user.model");
 const publicUser = (user) => ({ id: user._id, name: user.name, email: user.email });
 
 const registerController = async (req, res, next) => {

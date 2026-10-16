@@ -1,4 +1,4 @@
-const Session = require("../models/session.model");
+const Session = require("./session.model");
 
 const databaseCommand = async (operation) => {
     try {

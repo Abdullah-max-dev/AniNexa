@@ -1,7 +1,7 @@
 const express = require("express");
 require("dotenv").config();
-const authRouter = require("./routes/authRoute");
-const animeRouter = require("./routes/animeRoute");
+const authRouter = require("./modules/auth/authRoute");
+const homeRouter = require("./modules/home/home.route");
 const globalErrorHandler = require("./globalMiddlewares/globalErrorHandler");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
@@ -23,7 +23,7 @@ app.use("/api/auth", (req, res, next) => {
     res.set("Cache-Control", "no-store");
     next();
 }, authRouter);
-app.use("/api/anime", animeRouter);
+app.use("/api/home", homeRouter);
 
 app.use(globalErrorHandler);
 

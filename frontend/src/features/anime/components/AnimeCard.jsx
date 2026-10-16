@@ -13,9 +13,20 @@ export default function AnimeCard({ anime, index }) {
           </div>
         )}
         <div className="poster-badges">
-          <span>EP {anime.episodes ?? '—'}</span>
-          <span className="rating-badge">★ {score}</span>
-          <span className="type-badge">{anime.type?.toUpperCase() || 'ANIME'}</span>
+          <div className="poster-primary-badges">
+            {anime.episodes !== null && anime.episodes !== undefined && <span>EP {anime.episodes}</span>}
+            <span className="rating-badge">★ {score}</span>
+            {anime.status === 'unreleased' && anime.trailer && (
+              <a className="trailer-badge" href={anime.trailer} target="_blank" rel="noreferrer">TRAILER</a>
+            )}
+            <span className="type-badge">{anime.type?.toUpperCase() || 'ANIME'}</span>
+          </div>
+          {(anime.subtitles?.length > 0 || anime.dubs?.length > 0) && (
+            <div className="poster-language-badges">
+              {anime.subtitles?.length > 0 && <span className="language-badge">SUB</span>}
+              {anime.dubs?.length > 0 && <span className="language-badge">DUB</span>}
+            </div>
+          )}
         </div>
       </div>
       <div className="anime-card-copy">

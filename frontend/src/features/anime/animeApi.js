@@ -1,6 +1,5 @@
-export async function getAnimeListing({ page = 1, limit = 20, signal } = {}) {
-  const query = new URLSearchParams({ page: String(page), limit: String(limit) })
-  const response = await fetch(`/api/anime?${query}`, {
+export async function getHomeListing({ signal } = {}) {
+  const response = await fetch('/api/home', {
     headers: { Accept: 'application/json' },
     cache: 'no-store',
     signal,

@@ -8,8 +8,8 @@ process.env.JWT_REFRESH_SECRET = "test-refresh-secret-only";
 process.env.REFRESH_TOKEN_TTL_SECONDS = "604800";
 
 const { redisClient } = require("../db/redis");
-const User = require("../src/models/user.model");
-const Session = require("../src/models/session.model");
+const User = require("../src/modules/auth/user.model");
+const Session = require("../src/modules/auth/session.model");
 const app = require("../src/app");
 const cache = new Map();
 const sessionRecords = new Map();

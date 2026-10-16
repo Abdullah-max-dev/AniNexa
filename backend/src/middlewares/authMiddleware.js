@@ -1,4 +1,4 @@
-const tokens = require("../services/tokenService");
+const tokens = require("../modules/auth/tokenService");
 
 const authMiddleware = async (req, res, next) => {
     try {
